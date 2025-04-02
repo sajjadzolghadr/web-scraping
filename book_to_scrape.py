@@ -6,7 +6,7 @@ for n in range(1,51):
     scrape_url = base_url.format(n)
     results = requests.get(scrape_url)
     soup = bs4.BeautifulSoup(results.text , 'lxml')
-    books = soup.select(".product_dot")
+    books = soup.select(".product_pod")
 
     for book in books:
         if len(book.select('.star-rating.Three'))!= 0:
